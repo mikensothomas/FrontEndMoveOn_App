@@ -1,9 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import { ButtonRegister, ButtonText, Card, CardInput, Container, IconeImage, Input, LinkContainer, LinkText, TitleName, TitlePage } from "./style";
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { RootStackParamList } from "../../types";
-
-type LoginScreenProp = NativeStackNavigationProp<RootStackParamList, "Login">;
+import { LoginScreenProp } from "../../types";
 
 export default function Login() {
     const navigation = useNavigation<LoginScreenProp>();

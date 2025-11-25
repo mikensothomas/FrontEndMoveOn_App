@@ -1,6 +1,9 @@
 import { BackgroundImage, ButtonAndText, ButtonContainer, ButtonText, ButtonTravel, Container, ImageContainer, Overlay, TextBody } from "./style"
+import { useNavigation } from "@react-navigation/native";
+import { HomeScreenProp } from "../../types";
 
 export const Home = () => {
+    const navigation = useNavigation<HomeScreenProp>();
     return (
         <Container>
             <BackgroundImage source={require('../../../assets/imageScren.png')}>
@@ -11,7 +14,7 @@ export const Home = () => {
                 <TextBody>Para onde você quer ir? É só clicar no Butão em baixo.</TextBody>
                 <ButtonContainer>
                     <ButtonTravel>
-                        <ButtonText>Viajar</ButtonText>
+                        <ButtonText onPress={() => navigation.navigate("Login")}>Viajar</ButtonText>
                     </ButtonTravel>
                 </ButtonContainer>
             </ButtonAndText>

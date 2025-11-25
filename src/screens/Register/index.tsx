@@ -1,14 +1,13 @@
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { RootStackParamList } from "../../types";
+import { StatusBar } from 'expo-status-bar';
+import { RegisterScreenProp } from "../../types";
 import { ButtonLogin, ButtonRegister, ButtonText, ButtonTextLogin, Card, CardInput, Container, Input, TitleName, TitlePage } from "./style";
 import { useNavigation } from '@react-navigation/native';
 
-type LoginScreenProp = NativeStackNavigationProp<RootStackParamList, "Register">;
-
 export default function Register() {
-      const navigation = useNavigation<LoginScreenProp>();
+    const navigation = useNavigation<RegisterScreenProp>();
     return (
         <Container>
+            <StatusBar translucent backgroundColor="transparent" style="light" />
             <TitleName>MoveOn</TitleName>
             <TitlePage>Cadastro de Usuários</TitlePage>
             <Card>
@@ -29,11 +28,11 @@ export default function Register() {
                     />
                     <Input
                         placeholder="Senha"
-                        secureTextEntry = {true}
+                        secureTextEntry={true}
                     />
                     <Input
                         placeholder="Repetir a senha"
-                        secureTextEntry = {true}
+                        secureTextEntry={true}
                     />
                 </CardInput>
                 <ButtonRegister>
