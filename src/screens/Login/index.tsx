@@ -9,7 +9,7 @@ export default function Login() {
     return (
         <Background>
             <Container>
-                <StatusBar />
+                <StatusBar translucent backgroundColor="transparent" style="light" />
                 <IconeImage source={require('../../../assets/icon.png')} />
                 <TitleName>MoveOn</TitleName>
                 <TitlePage>Página de Login</TitlePage>

@@ -10,6 +10,7 @@ export const Background = styled(LinearGradient).attrs({
 export const Container = styled.View`
     flex: 1;
     padding: 24px;
+    margin-top: 60px;
     padding-top: 20%;
     align-items: center;
 `;
