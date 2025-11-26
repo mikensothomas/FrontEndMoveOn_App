@@ -14,19 +14,16 @@ export default function AppRouter() {
         <Stack.Screen
           name="Home"
           component={Home}
-          options={{ headerShown: false }}
         />
 
         <Stack.Screen
           name="Register"
           component={Register}
-          options={{ title: "Cadastro" }}
         />
 
         <Stack.Screen
           name="Login"
           component={Login}
-          options={{ title: "Login" }}
         />
       </Stack.Navigator>
     </NavigationContainer>

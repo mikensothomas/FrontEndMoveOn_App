@@ -1,8 +1,20 @@
 import styled from "styled-components/native";
+import { LinearGradient } from "expo-linear-gradient";
+import Icon from 'react-native-vector-icons/FontAwesome';
+
+export const IconPessone = styled(Icon)`
+  font-size: 70px;
+  margin-bottom: 50px;
+  color: #eaeef1ff;
+`
+export const Background = styled(LinearGradient).attrs({
+  colors: ['#1E90FF', '#FFFFFF', '#1E90FF'],
+})`
+  flex: 1;
+`;
 
 export const Container = styled.View`
   flex: 1;
-  background-color: ${({ theme }: any) => theme.colors.background};
   padding: 24px;
   justify-content: center;
   align-items: center;
@@ -32,12 +44,12 @@ export const CardInput = styled.View`
 export const Input = styled.TextInput`
   width: 100%;
   height: 50px;
-  border: 4px solid #d1d1d1;
+  border-bottom: 3px;
+  border-color: #1E90FF;
   border-radius: 5px;
-  margin-bottom: 16px;
   padding: 12px;
   font-size: 20px;
-  background-color: #fff;
+  margin-bottom: 20px;
 `;
 
 export const ButtonRegister = styled.TouchableOpacity`
@@ -50,7 +62,7 @@ export const ButtonRegister = styled.TouchableOpacity`
 
 export const ButtonText = styled.Text`
   color: ${({ theme }: any) => theme.colors.white};
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
 `;
 
@@ -65,6 +77,6 @@ export const ButtonLogin = styled.TouchableOpacity`
 
 export const ButtonTextLogin = styled.Text`
   color: ${({ theme }: any) => theme.colors.white};
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
 `;

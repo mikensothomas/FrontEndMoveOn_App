@@ -1,8 +1,14 @@
 import styled from "styled-components/native";
+import { LinearGradient } from "expo-linear-gradient";
+
+export const Background = styled(LinearGradient).attrs({
+  colors: ['#1E90FF', '#FFFFFF', '#1E90FF'],
+})`
+  flex: 1;
+`;
 
 export const Container = styled.View`
     flex: 1;
-    background-color: ${({ theme }: any) => theme.colors.background};
     padding: 24px;
     padding-top: 20%;
     align-items: center;
@@ -12,7 +18,6 @@ export const IconeImage = styled.Image`
     width: 220px;
     height: 150px;
     border-radius: 20px;
-    margin-top: 40px;
     margin-bottom: 20px;
 `
 
@@ -25,7 +30,8 @@ export const TitleName = styled.Text`
 
 export const TitlePage = styled.Text`
     font-size: 30px;
-    color: ${({ theme }: any) => theme.colors.white};
+    font-weight: 900;
+    color: #4a4949ff;
     margin-bottom: 32px;
 `;
 
@@ -40,12 +46,12 @@ export const CardInput = styled.View`
 export const Input = styled.TextInput`
     width: 100%;
     height: 50px;
-    border: 4px solid #d1d1d1;
+    border-bottom: 3px;
+    border-color: #1E90FF;
     border-radius: 5px;
     margin-bottom: 16px;
     padding: 12px;
     font-size: 20px;
-    background-color: #fff;
 `;
 
 export const ButtonRegister = styled.TouchableOpacity`
