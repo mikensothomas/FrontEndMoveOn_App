@@ -1,50 +1,80 @@
 import styled from "styled-components/native";
 import { ImageBackground } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 
-export const Container = styled.View`
+export const Background = styled(LinearGradient).attrs({
+  colors: ['#1E90FF', '#FFFFFF', '#1E90FF'],
+})`
   flex: 1;
-  background-color: #f5f6ff;
 `;
 
-export const BackgroundImage = styled(ImageBackground)`
-  flex: 0.7;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
-  overflow: hidden;
-`;
-
-export const Overlay = styled.View`
+export const GradientOverlay = styled(LinearGradient).attrs({
+  colors: ['#1E90FF', '#FFFFFF', '#1E90FF'],
+  start: { x: 0, y: 0 },
+  end: { x: 0, y: 1 }
+})`
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(122, 135, 248, 0.35);
-  z-index: 1;
 `;
 
-export const ImageContainer = styled.Image`
-  width: 300px;
-  height: 400px;
-  border-radius: 20px;
-  z-index: 5;
 
-  elevation: 10;
+export const Container = styled.View`
+  flex: 1;
+`;
+
+export const BackgroundImage = styled.View`
+  width: 100%;
+  height: 60%;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  overflow: hidden;
+`;
+
+
+export const DarkOverlay = styled(LinearGradient).attrs({
+  colors: [
+    'rgba(59, 137, 214, 0.45)',
+    'rgba(248, 242, 242, 0.55)',
+    'rgba(0,0,0,0.7)'
+  ],
+  start: { x: 0, y: 0 },
+  end: { x: 0, y: 1 },
+})`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+`;
+
+export const ImageWrapper = styled.View`
+  z-index: 10;
+  padding: 12px;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.12);
 
   shadow-color: #000;
-  shadow-opacity: 0.25;
-  shadow-radius: 10px;
-  shadow-offset: 0px 4px;
+  shadow-opacity: 0.3;
+  shadow-radius: 14px;
+  shadow-offset: 0px 6px;
+  elevation: 12;
+`;
+
+
+export const StyledImage = styled.Image`
+  width: 260px;
+  height: 360px;
+  border-radius: 26px;
 `;
 
 export const ButtonAndText = styled.View`
   flex: 1;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
   padding: 30px 20px;
 
   elevation: 10;
@@ -72,7 +102,7 @@ export const ButtonContainer = styled.View`
 export const ButtonTravel = styled.TouchableOpacity`
   background-color: ${({ theme }: any) => theme.colors.secondary};
   padding: 18px;
-  width: 80%;
+  width: 100%;
   border-radius: 12px;
   align-items: center;
 
