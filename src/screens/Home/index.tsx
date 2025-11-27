@@ -16,8 +16,6 @@ export const Home = () => {
     const [address, setAddress] = useState<any>(null);
     const [destination, setDestination] = useState<any>(null);
     const [destinationAddress, setDestinationAddress] = useState<string>("");
-
-    // Novo estado para armazenar o texto editado
     const [localAtualTexto, setLocalAtualTexto] = useState<string>("");
 
     useEffect(() => {
@@ -38,10 +36,8 @@ export const Home = () => {
 
             setAddress(addr[0]);
 
-            // Assim que pega o endereço → coloca no input editável
             setLocalAtualTexto(
-                `${addr[0].street || "Rua desconhecida"}, ${
-                    addr[0].streetNumber || ""
+                `${addr[0].street || "Rua desconhecida"}, ${addr[0].streetNumber || ""
                 } - ${addr[0].district || ""} ${addr[0].city || ""}`
             );
         })();
@@ -60,9 +56,8 @@ export const Home = () => {
         const city = get("locality") || get("administrative_area_level_2");
         const state = get("administrative_area_level_1");
 
-        const finalText = `${street}${number ? `, ${number}` : ""}${
-            neighborhood ? ` - ${neighborhood}` : ""
-        }${city ? `, ${city}` : ""}${state ? ` - ${state}` : ""}`;
+        const finalText = `${street}${number ? `, ${number}` : ""}${neighborhood ? ` - ${neighborhood}` : ""
+            }${city ? `, ${city}` : ""}${state ? ` - ${state}` : ""}`;
 
         return finalText || data.description;
     };
@@ -78,7 +73,6 @@ export const Home = () => {
     return (
         <Container>
             <BoxInputs>
-                {/* AGORA É EDITÁVEL */}
                 <InputAtual
                     editable={true}
                     value={localAtualTexto}
@@ -145,13 +139,12 @@ export const Home = () => {
                 )}
             </StyledMap>
 
-            {destination && (
-                <ButtonConfirmar>
-                    <ButtonConfirmarText>
-                        Confirmar destino: {destinationAddress}
-                    </ButtonConfirmarText>
-                </ButtonConfirmar>
-            )}
+            <ButtonConfirmar>
+                <ButtonConfirmarText>
+                    Enviar ✔️ {destinationAddress}
+                </ButtonConfirmarText>
+            </ButtonConfirmar>
+
         </Container>
     );
 };

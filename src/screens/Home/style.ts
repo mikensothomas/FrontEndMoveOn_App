@@ -46,7 +46,7 @@ export const ButtonConfirmar = styled.TouchableOpacity`
   padding: 15px;
   width: 90%;
   align-self: center;
-  border-radius: 10px;
+  border-radius: 5px;
   align-items: center;
 `;
 
