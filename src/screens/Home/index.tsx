@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import * as Location from "expo-location";
 import { Marker } from "react-native-maps";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
+import { SafeAreaView } from "react-native-safe-area-context";
 import {
     Container,
     StyledMap,
@@ -10,6 +11,9 @@ import {
     ButtonConfirmar,
     ButtonConfirmarText,
 } from "./style";
+import { estados } from "../../hooks/state";
+import { StatusBar } from "react-native";
+import { View } from "react-native";
 
 export const Home = () => {
     const [location, setLocation] = useState<any>(null);
@@ -36,10 +40,14 @@ export const Home = () => {
 
             setAddress(addr[0]);
 
+            const estadoCompleto = addr[0].region || "";
+            const uf: string | undefined = estados[estadoCompleto];
+
             setLocalAtualTexto(
-                `${addr[0].street || "Rua desconhecida"}, ${addr[0].streetNumber || ""
-                } - ${addr[0].district || ""} ${addr[0].city || ""}`
+                `${addr[0].street || "Rua desconhecida"}, ${addr[0].streetNumber || ""} - ${addr[0].district || ""
+                } ${addr[0].city || ""} - ${uf || ""} ${addr[0].country || ""}`
             );
+
         })();
     }, []);
 
@@ -72,79 +80,83 @@ export const Home = () => {
 
     return (
         <Container>
-            <BoxInputs>
-                <InputAtual
-                    editable={true}
-                    value={localAtualTexto}
-                    onChangeText={(text: string) => setLocalAtualTexto(text)}
-                />
+            <View style={{ height: 50, backgroundColor: "#1E90FF" }}>
+                <StatusBar backgroundColor="#1E90FF" barStyle="light-content" />
+            </View>
+            <SafeAreaView style={{backgroundColor: "#1E90FF", flex: 1 }}>
+                <BoxInputs>
+                    <InputAtual
+                        editable={true}
+                        value={localAtualTexto}
+                        onChangeText={(text: string) => setLocalAtualTexto(text)}
+                    />
 
-                <GooglePlacesAutocomplete
-                    placeholder="Para onde você quer ir?"
-                    onPress={(data, details = null) => {
-                        if (!details?.geometry?.location) return;
+                    <GooglePlacesAutocomplete
+                        placeholder="Para onde você quer ir?"
+                        onPress={(data, details = null) => {
+                            if (!details?.geometry?.location) return;
 
-                        const { lat, lng } = details.geometry.location;
+                            const { lat, lng } = details.geometry.location;
 
-                        setDestination({
-                            latitude: lat,
-                            longitude: lng,
-                        });
+                            setDestination({
+                                latitude: lat,
+                                longitude: lng,
+                            });
 
-                        const formatted = formatPlaceDetails(details, data);
-                        setDestinationAddress(formatted);
-                    }}
-                    fetchDetails={true}
-                    query={{
-                        key: "SUA_GOOGLE_API_KEY",
-                        language: "pt-BR",
-                    }}
-                    styles={{
-                        textInput: {
-                            backgroundColor: "#fff",
-                            height: 50,
-                            borderRadius: 8,
-                            paddingHorizontal: 10,
-                            marginTop: 8,
-                        },
-                        listView: {
-                            backgroundColor: "#fff",
-                        },
-                    }}
-                />
-            </BoxInputs>
+                            const formatted = formatPlaceDetails(details, data);
+                            setDestinationAddress(formatted);
+                        }}
+                        fetchDetails={true}
+                        query={{
+                            key: "SUA_GOOGLE_API_KEY",
+                            language: "pt-BR",
+                        }}
+                        styles={{
+                            textInput: {
+                                backgroundColor: "#fff",
+                                height: 50,
+                                borderRadius: 8,
+                                paddingHorizontal: 10,
+                                marginTop: 8,
+                            },
+                            listView: {
+                                backgroundColor: "#fff",
+                            },
+                        }}
+                    />
+                </BoxInputs>
 
-            <StyledMap
-                initialRegion={{
-                    latitude: location.latitude,
-                    longitude: location.longitude,
-                    latitudeDelta: 0.01,
-                    longitudeDelta: 0.01,
-                }}
-            >
-                <Marker
-                    coordinate={{
+                <StyledMap
+                    initialRegion={{
                         latitude: location.latitude,
                         longitude: location.longitude,
+                        latitudeDelta: 0.01,
+                        longitudeDelta: 0.01,
                     }}
-                    title="Local atual"
-                />
-
-                {destination && (
+                >
                     <Marker
-                        coordinate={destination}
-                        pinColor="green"
-                        title="Destino"
+                        coordinate={{
+                            latitude: location.latitude,
+                            longitude: location.longitude,
+                        }}
+                        title="Local atual"
                     />
-                )}
-            </StyledMap>
 
-            <ButtonConfirmar>
-                <ButtonConfirmarText>
-                    Enviar ✔️ {destinationAddress}
-                </ButtonConfirmarText>
-            </ButtonConfirmar>
+                    {destination && (
+                        <Marker
+                            coordinate={destination}
+                            pinColor="green"
+                            title="Destino"
+                        />
+                    )}
+                </StyledMap>
 
+                <ButtonConfirmar>
+                    <ButtonConfirmarText>
+                        Enviar ✔️ {destinationAddress}
+                    </ButtonConfirmarText>
+                </ButtonConfirmar>
+            </SafeAreaView>
         </Container>
     );
 };

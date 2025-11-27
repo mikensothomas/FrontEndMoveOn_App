@@ -14,7 +14,7 @@ export const StyledMap = styled(MapView)`
 
 export const BoxInputs = styled.View`
   position: absolute;
-  top: 40px;
+  top: 20px;
   width: 90%;
   align-self: center;
   z-index: 10;
@@ -41,7 +41,7 @@ export const InputDestino = styled.TextInput`
 
 export const ButtonConfirmar = styled.TouchableOpacity`
   position: absolute;
-  bottom: 40px;
+  bottom: 60px;
   background-color: #000;
   padding: 15px;
   width: 90%;
