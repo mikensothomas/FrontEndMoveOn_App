@@ -14,7 +14,7 @@ export const StyledMap = styled(MapView)`
 
 export const BoxInputs = styled.View`
   position: absolute;
-  top: 20px;
+  top: 60px;
   width: 90%;
   align-self: center;
   z-index: 10;

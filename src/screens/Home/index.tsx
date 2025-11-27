@@ -79,11 +79,12 @@ export const Home = () => {
     }
 
     return (
-        <Container>
-            <View style={{ height: 50, backgroundColor: "#1E90FF" }}>
-                <StatusBar backgroundColor="#1E90FF" barStyle="light-content" />
-            </View>
-            <SafeAreaView style={{backgroundColor: "#1E90FF", flex: 1 }}>
+        <SafeAreaView style={{ flex: 1 }}>
+            <Container>
+                <View style={{ height: 50, backgroundColor: "#1E90FF" }}>
+                    <StatusBar backgroundColor="#1E90FF" barStyle="light-content" />
+                </View>
+
                 <BoxInputs>
                     <InputAtual
                         editable={true}
@@ -156,7 +157,8 @@ export const Home = () => {
                         Enviar ✔️ {destinationAddress}
                     </ButtonConfirmarText>
                 </ButtonConfirmar>
-            </SafeAreaView>
-        </Container>
+
+            </Container>
+        </SafeAreaView>
     );
 };
