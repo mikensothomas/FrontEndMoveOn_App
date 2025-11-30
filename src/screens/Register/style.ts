@@ -45,7 +45,7 @@ export const Input = styled.TextInput`
   width: 100%;
   height: 50px;
   border-bottom-width: 1px;
-  border-color: #0d0e0eff;
+  border-color: #383939ff;
   border-radius: 5px;
   margin-bottom: 16px;
   padding: 12px;
@@ -80,3 +80,14 @@ export const ButtonTextLogin = styled.Text`
   font-size: 20px;
   font-weight: bold;
 `;
+
+export const Celect = styled.View`
+  width: 100%;
+  height: 50px;
+  border-bottom-width: 1px;
+  border-color: #383939ff;
+  border-radius: 5px;
+  margin-bottom: 16px;
+  font-size: 20px;
+  padding: 5px;
+`

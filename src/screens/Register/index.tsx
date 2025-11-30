@@ -1,10 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
 import { RegisterScreenProp } from "../../types";
-import { Background, ButtonLogin, ButtonRegister, ButtonText, ButtonTextLogin, Card, CardInput, Container, IconPessone, Input, TitleName, TitlePage } from "./style";
+import {
+    Background,
+    ButtonLogin,
+    ButtonRegister,
+    ButtonText,
+    ButtonTextLogin,
+    Card,
+    CardInput,
+    Celect,
+    Container,
+    IconPessone,
+    Input,
+    TitleName,
+    TitlePage
+} from "./style";
 import { useNavigation } from '@react-navigation/native';
+import { Picker } from "@react-native-picker/picker";
+import { useState } from 'react';
 
 export default function Register() {
     const navigation = useNavigation<RegisterScreenProp>();
+    const [selectedValue, setSelectedValue] = useState("");
     return (
         <Background>
             <Container>
@@ -17,6 +34,18 @@ export default function Register() {
                         <Input
                             keyboardType="text"
                             placeholder="Nome completo" />
+                        <Celect>
+                            <Picker
+                                selectedValue={selectedValue}
+                                onValueChange={(value) => setSelectedValue(value)}
+                            >
+                                <Picker.Item label="Informe teu Sexo" value="" style={{fontSize: 20}}/>
+                                <Picker.Item label="Masculino" value="masculino" style={{fontSize: 20}}/>
+                                <Picker.Item label="Feminino" value="feminino" style={{fontSize: 20}}/>
+                                <Picker.Item label="Não identificado" value="naoidentificado" style={{fontSize: 20}}/>
+                            </Picker>
+
+                        </Celect>
                         <Input
                             placeholder="Email"
                             keyboardType="email-address"
