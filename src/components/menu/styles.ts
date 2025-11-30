@@ -6,12 +6,12 @@ export const Container = styled.View`
     background-color: #ffff;
     height: 100%;
     min-width: 50%;
-    max-width: 60%;
-    padding-top: 29px;
+    max-width: 70%;
+    border-top-right-radius: 20px;
 `
 export const ContainerCard = styled.View`
     flex: 1;
-    gap: 80px;
+    gap: 10px;
 `
 export const User = styled.View`
     flex-direction: row;
@@ -50,7 +50,7 @@ export const TextTrip =styled.Text`
 export const ToGoOut = styled.View`
     flex-direction: row;
     gap: 20px;
-    padding-top: 25px;
+    padding-top: 10px;
     padding-left: 20px;
 `
 export const NewTrip = styled.View`
@@ -103,7 +103,7 @@ export const ResetPasswordIconeText = styled.Text`
 `
 export const Settings = styled.View`
     gap: 20px;
-    padding-bottom: 40px;
+    padding-bottom: 30px;
     border-bottom-width: 1px;
     border-bottom-color: #cfc9c9ff;
 `
@@ -155,6 +155,71 @@ export const SettingsCard = styled.View`
     padding-left: 20px;
 `
 export const IconeToGoOut = styled(Ionicons)`
+    color: #62238F;
+    font-size: 30px;
+`
+export const Register = styled.View`
+    gap: 20px;
+    padding-bottom: 30px;
+    border-bottom-width: 1px;
+    border-bottom-color: #cfc9c9ff;
+`
+export const TextRegister = styled.Text`
+    font-size: 20px;
+    font-weight: 500;
+    color: #676464ff;
+    padding-left: 20px;
+`
+export const IconeAndTextUserRegister = styled.View`
+    flex-direction: row;
+    gap: 20px;
+`
+export const IconeAndeTextMortocyclistRegister = styled.View`
+    flex-direction: row;
+    gap: 20px;
+`
+export const LoginAndTextUser = styled.View`
+    flex-direction: row;
+    gap: 20px;
+`
+export const LoginAndTextMotorcyclist = styled.View`
+    flex-direction: row;
+    gap: 20px;
+`
+export const IconeAndeText = styled.View`
+    gap: 10px;
+    padding-left: 20px;
+`
+export const UserText = styled.Text`
+    font-size: 15px;
+    font-weight: 900;
+`
+export const UserIcone = styled(Ionicons)`
+    color: #62238F;
+    font-size: 30px;
+`
+export const MotorcyclistText = styled.Text`
+    font-size: 15px;
+    font-weight: 900;
+    gap: 20px;
+`
+export const MotorcyclistIcone = styled(Ionicons)`
+    color: #62238F;
+    font-size: 30px;
+`
+export const LoginUserText = styled.Text`
+    font-size: 15px;
+    font-weight: 900;
+`
+export const LoginUserIcone = styled(Ionicons)`
+    color: #62238F;
+    font-size: 30px;
+`
+export const LoginMotorcyclistText = styled.Text`
+    font-size: 15px;
+    font-weight: 900;
+`
+export const LoginMotorcyclistIcone = styled(Ionicons)`
     color: #62238F;
     font-size: 30px;
 `

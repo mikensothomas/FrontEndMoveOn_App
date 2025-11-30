@@ -16,6 +16,7 @@ import {
 } from "./style";
 import { estados } from "../../hooks/state";
 import { Pressable, StatusBar, View } from "react-native";
+import { MenuContainer } from "../../components/menu";
 
 export const Home = () => {
     const [location, setLocation] = useState<any>(null);
@@ -23,6 +24,7 @@ export const Home = () => {
     const [destination, setDestination] = useState<any>(null);
     const [destinationAddress, setDestinationAddress] = useState<string>("");
     const [localAtualTexto, setLocalAtualTexto] = useState<string>("");
+    const [openMenu, setOpenMenu] = useState(false)
 
     useEffect(() => {
         (async () => {
@@ -87,7 +89,7 @@ export const Home = () => {
                     <StatusBar backgroundColor="#1E90FF" barStyle="light-content" />
                     <MenuAndNotifications>
                         <Pressable
-                            onPress={() => { }}
+                            onPress={() => setOpenMenu(true)}
                             style={({ pressed }) => ({
                                 opacity: pressed ? 0.5 : 1
                             })}
@@ -104,6 +106,38 @@ export const Home = () => {
                         </Pressable>
                     </MenuAndNotifications>
                 </View>
+                {openMenu && (
+                    <Pressable
+                        onPress={() => setOpenMenu(false)}
+                        style={{
+                            position: "absolute",
+                            top: 0,
+                            left: 0,
+                            right: 0,
+                            bottom: 0,
+                            zIndex: 99,
+                            backgroundColor: "rgba(0,0,0,0.3)"
+                        }}
+                    />
+                )}
+
+                {openMenu && (
+                    <View
+                        style={{
+                            position: "absolute",
+                            top: 0,
+                            left: 0,
+                            width: "70%",
+                            height: "100%",
+                            backgroundColor: "#fff",
+                            padding: 20,
+                            zIndex: 99,
+                            elevation: 10,
+                        }}
+                    >
+                        <MenuContainer/>
+                    </View>
+                )}
 
                 <BoxInputs>
                     <InputAtual
