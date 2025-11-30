@@ -7,6 +7,11 @@ export type RootStackParamList = {
   Register: undefined;
 };
 
+export type MenuCloseProps = {
+    closeMenu: () => void;
+};
+
 export type RegisterScreenProp = NativeStackNavigationProp<RootStackParamList, "Register">;
 export type LoginScreenProp = NativeStackNavigationProp<RootStackParamList, "Login">;
 export type HomeScreenProp = NativeStackNavigationProp<RootStackParamList, "Home">;
+export type MenuProps = NativeStackNavigationProp<RootStackParamList, "MenuContainer">;

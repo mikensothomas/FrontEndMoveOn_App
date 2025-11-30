@@ -16,12 +16,6 @@ export default function AppRouter() {
           name="Home"
           component={Home}
         />
-
-        <Stack.Screen
-          name="MenuContainer"
-          component={MenuContainer}
-        />
-
         <Stack.Screen
           name="Register"
           component={Register}

@@ -112,11 +112,11 @@ export const Home = () => {
                         style={{
                             position: "absolute",
                             top: 0,
-                            left: 0,
+                            left: "70%",
                             right: 0,
                             bottom: 0,
+                            backgroundColor: "rgba(0,0,0,0.3)",
                             zIndex: 99,
-                            backgroundColor: "rgba(0,0,0,0.3)"
                         }}
                     />
                 )}
@@ -131,14 +131,14 @@ export const Home = () => {
                             height: "100%",
                             backgroundColor: "#fff",
                             padding: 20,
-                            zIndex: 99,
+                            zIndex: 20,
                             elevation: 10,
                         }}
                     >
-                        <MenuContainer/>
+                        <MenuContainer closeMenu={() => setOpenMenu(false)} />
+
                     </View>
                 )}
-
                 <BoxInputs>
                     <InputAtual
                         editable={true}

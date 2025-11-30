@@ -53,14 +53,15 @@ export const ToGoOut = styled.View`
     padding-top: 10px;
     padding-left: 20px;
 `
-export const NewTrip = styled.View`
+export const NewTrip = styled.TouchableOpacity`
     flex-direction: row;
     gap: 20px;
 `
-export const NewTripIcone = styled(Ionicons)`
+export const NewTripIcone = styled(Ionicons).attrs({
+    size: 40,
+})`
     color: #62238F;
     font-size: 30px;
-    size: 40;
 `
 export const NewTripText = styled.Text`
     font-size: 15px;
@@ -122,10 +123,13 @@ export const TextSettings = styled.Text`
     color: #676464ff;
     padding-left: 20px;
 `
-export const Data = styled.View`
+export const Data = styled.TouchableOpacity`
     flex-direction: row;
-    gap: 20px;
-`
+    align-items: center;
+    gap: 15px;
+    padding: 15px 10px;
+`;
+
 export const DataIcone = styled(Ionicons)`
     color: #62238F;
     font-size: 30px;
@@ -170,7 +174,7 @@ export const TextRegister = styled.Text`
     color: #676464ff;
     padding-left: 20px;
 `
-export const IconeAndTextUserRegister = styled.View`
+export const IconeAndTextUserRegister = styled.TouchableOpacity`
     flex-direction: row;
     gap: 20px;
 `
@@ -178,7 +182,7 @@ export const IconeAndeTextMortocyclistRegister = styled.View`
     flex-direction: row;
     gap: 20px;
 `
-export const LoginAndTextUser = styled.View`
+export const LoginAndTextUser = styled.TouchableOpacity`
     flex-direction: row;
     gap: 20px;
 `

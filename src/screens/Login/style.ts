@@ -47,8 +47,8 @@ export const CardInput = styled.View`
 export const Input = styled.TextInput`
     width: 100%;
     height: 50px;
-    border-bottom: 3px;
-    border-color: #1E90FF;
+    border-bottom-width: 1px;
+    border-color: #0d0e0eff;
     border-radius: 5px;
     margin-bottom: 16px;
     padding: 12px;

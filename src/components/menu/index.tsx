@@ -1,4 +1,5 @@
 import { SafeAreaView } from "react-native-safe-area-context"
+import { useNavigation } from "@react-navigation/native";
 import {
     Container,
     ContainerCard,
@@ -50,8 +51,10 @@ import {
     LoginAndTextMotorcyclist,
 } from "./styles"
 import { Text, StatusBar, ScrollView } from "react-native"
+import { MenuCloseProps, MenuProps } from "../../types";
 
-export const MenuContainer = () => {
+export const MenuContainer = ({ closeMenu }: MenuCloseProps) => {
+    const navigation = useNavigation<MenuProps>();
     return (
         <ScrollView showsVerticalScrollIndicator={true}>
             <SafeAreaView style={{ flex: 1 }}>
@@ -70,7 +73,10 @@ export const MenuContainer = () => {
                         <Trip>
                             <TextTrip>Viagem</TextTrip>
                             <TripCard>
-                                <NewTrip>
+                                <NewTrip onPress={() => {
+                                    closeMenu()
+                                    navigation.navigate("Home")
+                                }}>
                                     <NewTripIcone name="car-outline" />
                                     <NewTripText>Nova Viagem</NewTripText>
                                 </NewTrip>
@@ -88,7 +94,7 @@ export const MenuContainer = () => {
                             <TextSettings>Configurações</TextSettings>
                             <SettingsCard>
                                 <Data>
-                                    <DataIcone name="settings-outline" />
+                                    <DataIcone name="person-circle-outline" />
                                     <DataIconeText>Meus Daods</DataIconeText>
                                 </Data>
                                 <ResetPassword>
@@ -104,7 +110,10 @@ export const MenuContainer = () => {
                         <Register>
                             <TextRegister>Cadastro e Login</TextRegister>
                             <IconeAndeText>
-                                <IconeAndTextUserRegister>
+                                <IconeAndTextUserRegister onPress={() => {
+                                    closeMenu()
+                                    navigation.navigate("Register")
+                                }}>
                                     <UserIcone name="person-add" />
                                     <UserText>Cadastro Usúario</UserText>
                                 </IconeAndTextUserRegister>
@@ -112,11 +121,14 @@ export const MenuContainer = () => {
                                     <MotorcyclistIcone name="person-add-outline" />
                                     <MotorcyclistText>Cadastro Motolista</MotorcyclistText>
                                 </IconeAndeTextMortocyclistRegister>
-                                <LoginAndTextUser>
+                                <LoginAndTextUser onPress={() => {
+                                    closeMenu()
+                                    navigation.navigate("Login")
+                                }}>
                                     <LoginUserIcone name="finger-print-outline" />
                                     <LoginUserText>Login Usúario</LoginUserText>
                                 </LoginAndTextUser>
-                                <LoginAndTextMotorcyclist>
+                                <LoginAndTextMotorcyclist onPress={() => navigation.navigate("Home")}>
                                     <LoginMotorcyclistIcone name="car-sport-outline" />
                                     <LoginMotorcyclistText>Login Motorista</LoginMotorcyclistText>
                                 </LoginAndTextMotorcyclist>
