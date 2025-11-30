@@ -4,6 +4,7 @@ import Login from "../screens/Login";
 import Register from "../screens/Register";
 import { RootStackParamList } from "../types";
 import { Home } from "../screens/Home";
+import { MenuContainer } from "../components/menu";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -14,6 +15,11 @@ export default function AppRouter() {
         <Stack.Screen
           name="Home"
           component={Home}
+        />
+
+        <Stack.Screen
+          name="MenuContainer"
+          component={MenuContainer}
         />
 
         <Stack.Screen

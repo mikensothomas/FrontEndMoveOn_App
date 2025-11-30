@@ -1,10 +1,27 @@
 import styled from "styled-components/native";
 import MapView from "react-native-maps";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 export const Container = styled.View`
   flex: 1;
   background-color: #fff;
 `;
+export const MenuAndNotifications = styled.View`
+  flex: 1;
+  flex-direction: row;
+  margin-top: 10px;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 20px;
+`
+export const Menu = styled(Ionicons)`
+  font-size: 30px;
+  color: #fff;
+`
+export const NotificationsIcone = styled(Ionicons)`
+  font-size: 30px;
+  color: #fff;
+`
 
 export const StyledMap = styled(MapView)`
   flex: 1;

@@ -10,10 +10,12 @@ import {
     InputAtual,
     ButtonConfirmar,
     ButtonConfirmarText,
+    NotificationsIcone,
+    MenuAndNotifications,
+    Menu,
 } from "./style";
 import { estados } from "../../hooks/state";
-import { StatusBar } from "react-native";
-import { View } from "react-native";
+import { Pressable, StatusBar, View } from "react-native";
 
 export const Home = () => {
     const [location, setLocation] = useState<any>(null);
@@ -45,7 +47,7 @@ export const Home = () => {
 
             setLocalAtualTexto(
                 `${addr[0].street || "Rua desconhecida"}, ${addr[0].streetNumber || ""} - ${addr[0].district || ""
-                } ${addr[0].city || ""} - ${uf || ""} ${addr[0].country || ""}`
+                } ${addr[0].city || ""} - ${uf || ""} ${addr[0].country || ""} ${addr[0].postalCode}`
             );
 
         })();
@@ -83,6 +85,24 @@ export const Home = () => {
             <Container>
                 <View style={{ height: 50, backgroundColor: "#1E90FF" }}>
                     <StatusBar backgroundColor="#1E90FF" barStyle="light-content" />
+                    <MenuAndNotifications>
+                        <Pressable
+                            onPress={() => { }}
+                            style={({ pressed }) => ({
+                                opacity: pressed ? 0.5 : 1
+                            })}
+                        >
+                            <Menu name="menu-sharp" />
+                        </Pressable>
+                        <Pressable
+                            onPress={() => { }}
+                            style={({ pressed }) => ({
+                                opacity: pressed ? 0.5 : 1
+                            })}
+                        >
+                            <NotificationsIcone name="notifications-outline" />
+                        </Pressable>
+                    </MenuAndNotifications>
                 </View>
 
                 <BoxInputs>
