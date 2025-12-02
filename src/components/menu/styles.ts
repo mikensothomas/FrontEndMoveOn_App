@@ -26,7 +26,7 @@ export const IconWrapper = styled.View`
 
 export const UserPicture = styled(Ionicons).attrs({
   size: 60,
-  color: "#62238F",
+  color: "#1E90FF",
 })``;
 
 export const EmailAndName = styled.View`
@@ -60,12 +60,12 @@ export const NewTrip = styled.TouchableOpacity`
 export const NewTripIcone = styled(Ionicons).attrs({
     size: 40,
 })`
-    color: #62238F;
+    color: #1E90FF;
     font-size: 30px;
 `
 export const NewTripText = styled.Text`
     font-size: 15px;
-    font-weight: 900;
+    font-weight: 500;
 `
 export const OtherPeson = styled.View`
     flex-direction: row;
@@ -74,16 +74,16 @@ export const OtherPeson = styled.View`
 
 export const OtherPersonText = styled.Text`
     font-size: 15px;
-    font-weight: 900;
+    font-weight: 500;
 `
 export const PesonIcone = styled(Ionicons)`
-    color: #62238F;
+    color: #1E90FF;
     font-size: 30px;
 `
 
 export const TripHistoryIconeText = styled.Text`
     font-size: 15px;
-    font-weight: 900;
+    font-weight: 500;
 `
 export const TripHistory = styled.View`
     flex-direction: row;
@@ -91,16 +91,16 @@ export const TripHistory = styled.View`
 `
 export const DataIconeText = styled.Text`
     font-size: 15px;
-    font-weight: 900;
+    font-weight: 500;
 `
 export const TripHistoryIcone = styled(Ionicons)`
-    color: #62238F;
+    color: #1E90FF;
     font-size: 30px;
 `
 
 export const ResetPasswordIconeText = styled.Text`
     font-size: 15px;
-    font-weight: 900;
+    font-weight: 500;
 `
 export const Settings = styled.View`
     gap: 20px;
@@ -110,12 +110,12 @@ export const Settings = styled.View`
 `
 export const SettingsIconeText = styled.Text`
     font-size: 15px;
-    font-weight: 900;
+    font-weight: 500;
 `
 
 export const IconeToGoOutText = styled.Text`
     font-size: 15px;
-    font-weight: 900;
+    font-weight: 500;
 `
 export const TextSettings = styled.Text`
     font-size: 20px;
@@ -131,7 +131,7 @@ export const Data = styled.TouchableOpacity`
 `;
 
 export const DataIcone = styled(Ionicons)`
-    color: #62238F;
+    color: #1E90FF;
     font-size: 30px;
 `
 export const ResetPassword = styled.View`
@@ -139,7 +139,7 @@ export const ResetPassword = styled.View`
     gap: 20px;
 `
 export const ResetPasswordIcone = styled(Ionicons)`
-    color: #62238F;
+    color: #1E90FF;
     font-size: 30px;
 `
 export const Configuracoes = styled.View`
@@ -147,7 +147,7 @@ export const Configuracoes = styled.View`
     gap: 20px;
 `
 export const SettingsIcone = styled(Ionicons)`
-    color: #62238F;
+    color: #1E90FF;
     font-size: 30px;
 `
 export const TripCard = styled.View`
@@ -159,7 +159,7 @@ export const SettingsCard = styled.View`
     padding-left: 20px;
 `
 export const IconeToGoOut = styled(Ionicons)`
-    color: #62238F;
+    color: #1E90FF;
     font-size: 30px;
 `
 export const Register = styled.View`
@@ -196,34 +196,35 @@ export const IconeAndeText = styled.View`
 `
 export const UserText = styled.Text`
     font-size: 15px;
-    font-weight: 900;
+    font-weight: 500;
 `
 export const UserIcone = styled(Ionicons)`
-    color: #62238F;
+    color: #1E90FF;
     font-size: 30px;
 `
 export const MotorcyclistText = styled.Text`
     font-size: 15px;
-    font-weight: 900;
+    font-weight: 500;
     gap: 20px;
 `
 export const MotorcyclistIcone = styled(Ionicons)`
-    color: #62238F;
+    color: #1E90FF;
     font-size: 30px;
 `
 export const LoginUserText = styled.Text`
     font-size: 15px;
-    font-weight: 900;
+    font-weight: 500;
 `
 export const LoginUserIcone = styled(Ionicons)`
-    color: #62238F;
+    color: #1E90FF;
     font-size: 30px;
 `
 export const LoginMotorcyclistText = styled.Text`
     font-size: 15px;
-    font-weight: 900;
+    font-weight: 500;
 `
 export const LoginMotorcyclistIcone = styled(Ionicons)`
-    color: #62238F;
+    color: #1E90FF;
     font-size: 30px;
 `
+// 62238F
