@@ -18,12 +18,14 @@ import {
 import { useNavigation } from '@react-navigation/native';
 import { Picker } from "@react-native-picker/picker";
 import { useState } from 'react';
+import { ScrollView } from 'react-native';
 
 export default function Register() {
     const navigation = useNavigation<RegisterScreenProp>();
     const [selectedValue, setSelectedValue] = useState("");
     return (
         <Background>
+            <ScrollView showsVerticalScrollIndicator={true}>
             <Container>
                 <StatusBar />
                 <IconPessone name="user-circle" />
@@ -74,6 +76,7 @@ export default function Register() {
 
                 </Card>
             </Container >
+            </ScrollView>
         </Background>
     )
 }

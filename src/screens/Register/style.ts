@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 export const IconPessone = styled(Icon)`
   font-size: 70px;
+  margin-top: 35px;
   margin-bottom: 50px;
   color: #eaeef1ff;
 `

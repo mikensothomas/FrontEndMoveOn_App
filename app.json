@@ -1,5 +1,6 @@
 {
   "expo": {
+    "plugins": ["expo-location"],
     "name": "MoveOn App",
     "slug": "MoveOn App",
     "version": "1.0.0",
@@ -21,7 +22,8 @@
         "backgroundColor": "#4CD964"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": ["ACCESS_FINE_LOCATION"]
     },
     "web": {
       "favicon": "./assets/splash-icon.png"
