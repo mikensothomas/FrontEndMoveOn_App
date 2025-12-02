@@ -117,7 +117,10 @@ export const MenuContainer = ({ closeMenu }: MenuCloseProps) => {
                                     <UserIcone name="person-add" />
                                     <UserText>Cadastro Usúario</UserText>
                                 </IconeAndTextUserRegister>
-                                <IconeAndeTextMortocyclistRegister>
+                                <IconeAndeTextMortocyclistRegister onPress={() => {
+                                    closeMenu()
+                                    navigation.navigate("RegisterMotorcyclist")
+                                }}>
                                     <MotorcyclistIcone name="person-add-outline" />
                                     <MotorcyclistText>Cadastro Motolista</MotorcyclistText>
                                 </IconeAndeTextMortocyclistRegister>

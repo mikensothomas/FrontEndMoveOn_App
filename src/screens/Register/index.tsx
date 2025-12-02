@@ -44,7 +44,6 @@ export default function Register() {
                                 <Picker.Item label="Informe teu Sexo" value="" style={{fontSize: 20}}/>
                                 <Picker.Item label="Masculino" value="masculino" style={{fontSize: 20}}/>
                                 <Picker.Item label="Feminino" value="feminino" style={{fontSize: 20}}/>
-                                <Picker.Item label="Não identificado" value="naoidentificado" style={{fontSize: 20}}/>
                             </Picker>
 
                         </Celect>

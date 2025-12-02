@@ -4,7 +4,7 @@ import Login from "../screens/Login";
 import Register from "../screens/Register";
 import { RootStackParamList } from "../types";
 import { Home } from "../screens/Home";
-import { MenuContainer } from "../components/menu";
+import RegisterMotorcyclist from "../screens/RegisterMotorcyclist";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -24,6 +24,10 @@ export default function AppRouter() {
         <Stack.Screen
           name="Login"
           component={Login}
+        />
+        <Stack.Screen
+          name="RegisterMotorcyclist"
+          component={RegisterMotorcyclist}
         />
       </Stack.Navigator>
     </NavigationContainer>

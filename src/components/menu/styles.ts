@@ -178,7 +178,7 @@ export const IconeAndTextUserRegister = styled.TouchableOpacity`
     flex-direction: row;
     gap: 20px;
 `
-export const IconeAndeTextMortocyclistRegister = styled.View`
+export const IconeAndeTextMortocyclistRegister = styled.TouchableOpacity`
     flex-direction: row;
     gap: 20px;
 `
