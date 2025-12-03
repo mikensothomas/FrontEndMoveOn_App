@@ -4,7 +4,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 
 export const Container = styled.View`
   flex: 1;
-  background-color: #fff;
+  background-color: #1E90FF;
 `;
 export const MenuAndNotifications = styled.View`
   flex: 1;
@@ -59,7 +59,7 @@ export const InputDestino = styled.TextInput`
 export const ButtonConfirmar = styled.TouchableOpacity`
   position: absolute;
   bottom: 60px;
-  background-color: #000;
+  background-color: #1E90FF;
   padding: 15px;
   width: 90%;
   align-self: center;
